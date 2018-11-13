@@ -1,0 +1,6 @@
+FROM nginx
+ENV AUTHOR=Docker
+WOKRDIR /Users/User/Desktp/docker/nginx.html
+COPY hello.html /Users/User/Desktop/docker/nginx/html
+
+CMD cd /Users/User/Desktop/docker/nginx.html && sed -e s/Docker/"$AUTHOR"/ hello.html > index.html ; nginx -g 'daemon off';
